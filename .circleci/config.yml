@@ -38,7 +38,9 @@ jobs:
 
       - run:
           name: "List Directory"
-          command: ls --all
+          command: |
+            pwd
+            ls --all
       - run:
           name: "Execute Java"
           command: |
