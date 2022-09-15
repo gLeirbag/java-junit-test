@@ -1,0 +1,8 @@
+package app;
+
+public final class Calculadora {
+	public int somar(int a, int b) {
+		return a+b;
+	}
+	
+}
