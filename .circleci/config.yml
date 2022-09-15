@@ -25,7 +25,17 @@ jobs:
       # Then run your tests!
       - run:
           name: Test
-          command: mvn test
+          command: mvn test~
+  
+  execute:
+    docker:
+      - image: cimg/openjdk:17.0
+    steps:
+      - run:
+          name: "Execute Java"
+          command: |
+            cd ~/target/classes/app 
+            java MainClass
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -34,3 +44,4 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test
+      - execute
