@@ -27,10 +27,13 @@ jobs:
           name: Test
           command: mvn test
   
-  execute:
+  build-and-execute:
     docker:
       - image: cimg/openjdk:17.0
     steps:
+      - run:
+          name: Build
+          command: mvn -B -DskipTests clean package
       - run:
           name: "Execute Java"
           command: |
@@ -44,4 +47,4 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build-and-test
-      - execute
+      - build-and-execute
