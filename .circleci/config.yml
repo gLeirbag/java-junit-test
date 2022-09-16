@@ -44,7 +44,7 @@ jobs:
       - run:
           name: "Execute Java"
           command: |
-            cd ./project/target/classes/app 
+            cd /home/circleci/project/target/classes/app
             java MainClass
 
 # Invoke jobs via workflows
