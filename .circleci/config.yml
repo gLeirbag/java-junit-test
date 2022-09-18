@@ -44,7 +44,7 @@ jobs:
       - run:
           name: "Execute Java"
           command: |
-            cd /home/circleci/project/target/classes/app
+            cd /home/circleci/project/target/classes
             ls --all
             java MainClass
 
